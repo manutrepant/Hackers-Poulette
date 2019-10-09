@@ -1,6 +1,6 @@
 # Hackers-Poulette
-*Lien HTML du projet : https://manutrepant.github.io/Hackers-Poulette/
-*Lien du projet : https://github.com/manutrepant/Hackers-Poulette
+* Lien HTML du projet : https://manutrepant.github.io/Hackers-Poulette/
+* Lien du projet : https://github.com/manutrepant/Hackers-Poulette
 
 ## Objectifs du projet :
 * Proposer un mock-UP
@@ -13,4 +13,4 @@
 * Si réponse validée, réponse par email
 * Appliquer un anti spam (honeypot)
 
-https://media.giphy.com/media/l3vR9IEU6nYAmZyoM/giphy.gif
+
