@@ -1,9 +1,5 @@
 <?php
 session_start();
-
-
-
-print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +85,8 @@ href="favicon.ico"
 $sujet=$_SESSION['sujet'];
 // Compte nombre de sujet(s)
 $checked_count = count($_SESSION['sujet']);
+
+
 echo $checked_count."<strong> sujet(s) sélectionné(s) : <br/></strong> ";
 // Boucle et affichage des sujets
 $nbrSujet=1;
@@ -105,7 +103,10 @@ for ($i=0; $i < $checked_count ; $i++)
 <?php echo '<strong>Votre message : </strong>'.$_SESSION['message']; ?></div>
 </div>
 
+
 <?php 
+// Affichage Session
+//print_r($_SESSION);
 
 // On détruit les variables de notre session
 session_unset ();

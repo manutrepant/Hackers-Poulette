@@ -14,12 +14,14 @@ $valeurMessage ="";
 $valeurEmail="";
 $valeurSujet="";
 
+$email="";
+$messageErreurCaractere=".";
+
 // Couleur erreur
 $checkColor="red";
 
 
-
-
+// Si formulaire envoyé
 if (isset($_POST['envoye']) && !empty($_POST['envoye']))
     {
         
@@ -55,7 +57,8 @@ if (isset($_POST['envoye']) && !empty($_POST['envoye']))
         {
         $checkSujet="Cocher votre sujet SVP !";
         }
-        // ----------------------------------------------------------------
+
+// ----------------------------------------------------------------
 
         // Si donnée Prenom
         if (!empty($_POST['prenom']))
@@ -83,56 +86,69 @@ if (isset($_POST['envoye']) && !empty($_POST['envoye']))
         // check box
         if(isset($_POST['submit']))
         
-        {//to run PHP script on submit
-            if(!empty($_POST['sujet']))
-            
+        {//Checker si Check Box = !empty
+            if(!empty($_POST['sujet']))  
             {
         
-        // Loop to store and display values of individual checked checkbox.
-            $checked_count = count($_POST['sujet']);
-            foreach($_POST['sujet'] as $selected)
-                {
-                    echo $selected."</br>";
-                }
+            // Vérification des entrées
+                $checked_count = count($_POST['sujet']);
+                foreach($_POST['sujet'] as $selected)
+                    {
+                        echo $selected."</br>";
+                    }
             }
         }
         // fin check box
+        // Si donnée dans Email / pays / Genre
 
-        // Si donnée Email et le reste
         if (!empty($_POST['email']))
         {      
-            $valeurEmail=htmlspecialchars($_POST['email']);      
-            $_SESSION['email'] = htmlspecialchars($_POST['email']);
+            // Validated
+            
+            $valeurEmail=htmlspecialchars($_POST['email']); 
+            $flagEmail=filter_var($valeurEmail, FILTER_VALIDATE_EMAIL);
+            
+            // Si mail invalide alors true
+            if ($flagEmail==false) {
+                $messageErreurCaractere="Caractères interdits !";
+            }
 
+
+            else
+            {
+
+            //echo "TOUS EST OK";
+            //$messageErreurCaractere="Merci !";
+
+            // Fin Validated
+            $_SESSION['email'] = htmlspecialchars($_POST['email']);
             $valeurGenre=htmlspecialchars($_POST['genre']); 
             $valeurPays=htmlspecialchars($_POST['pays']); 
             $_SESSION['genre'] = htmlspecialchars($_POST['genre']);
             $_SESSION['pays'] = htmlspecialchars($_POST['pays']);
-            
-            /*$checked_count = count($_POST['sujet']);
-            foreach($_POST['sujet'] as $selected) {
-                echo $selected;
-                }*/
-
             $_SESSION['sujet'] = $_POST['sujet'];
 
-
+            }
         }
 
-// Quand TRUE - Données
-if ($valeurNom==true && $valeurPrenom==true && $valeurEmail==true && $valeurMessage==true) 
+// Quand toutes les donnéés sont envoyées et TRUE
+if ($valeurNom==true && $valeurPrenom==true && $valeurEmail==true && $valeurMessage==true && $flagEmail==true) 
     {
-        echo "TRUE<br>";
-        print_r($_SESSION);
+
+//echo "TRUE - TOUS LES CHAMPS<br>";
+//print_r($_SESSION);
+
 // -------------------------------------------------------------
+// Redirection vers page email envoye
 
-        header('Location:email-envoye.php');
+        header('Location: email-envoye.php'); 
     }
 
-// False
+// Message d'erreur "Haut de page"
 else echo "";
-    }
 
+// Fin de IF
+    }
 ?>
 
 <!DOCTYPE html>
@@ -190,10 +206,16 @@ href="favicon.ico"
 </head>
 <body>
 
+<!-- Version LOGO SmartPhone -->
+<!-- col-576 / col-sm >= 576 / col-md >= 768  -->
+<div class="horizontal d-sm-none d-md-none "><img class="img-fluid" src="images/hackers-poulette-logo.png" alt="Logo du site : Hackers Poulette"></div>
+<!-- Fin LOGO SmartPhone -->
+
 <!-- Header -->
 <header>
 <h1>Nous contacter !</h1>
 </header>
+
 <!-- Fin Header -->
 <!-- Formulaire -->
 <!-- $url -->
@@ -203,7 +225,6 @@ href="favicon.ico"
 <section>
 <div class="row">
 <!-- col-576 / col-sm >= 576 / col-md >= 768  -->
-
 <!-- DIV 1 -->
 <div class="col-12 col-sm-6 col-md-6">
 <div class="row-12"><hr>
@@ -219,6 +240,13 @@ href="favicon.ico"
 <div class="row-12"><hr>
 <label for="Entrer votre adresse email" class="w-100 p-2">Entrer votre adresse email : <?php echo "<p class='".$checkColor."'>".$checkEmail."</p>" ?></label>
 <input title="Entrer votre adresse email" type="text" name="email" placeholder="Entrer votre adresse email" autocomplete="on" size="30" maxlength="30" <?php echo 'value="'.$valeurEmail.'"'; ?>>
+
+<!-- Info email non valide -->
+<?php
+echo '<span class="red">'.$messageErreurCaractere.'</span>';
+?>
+<!-- Fin Info email non valide -->
+
 </div>
 
 <div class="row-12"><hr>
@@ -239,18 +267,18 @@ href="favicon.ico"
 
 <div class="row-12"><hr>
 <label for="Choisisser votre sujet" class="w-100 p-2">Choisisser votre sujet :  <?php echo "<p class='".$checkColor."'>".$checkSujet."</p>" ?></label>
-<input title="Question générale" type="checkbox" name="sujet[]" value="<strong>Question générale</strong>">Question générale
+<input title="Question générale"checked type="checkbox" name="sujet[]" value="<strong>Question générale</strong>">Question générale
 <input title="Aide technique" type="checkbox" name="sujet[]" value="<strong>Aide technique</strong>">Aide technique
 <input title="Service après vente" type="checkbox" name="sujet[]" value="<strong>Service après vente</strong>" >Service après vente
 </div>
 
 <!-- END DIV 1-->   
 </div>
-
 <!-- DIV 2 -->
 
 <div class="col-12 col-sm-6 col-md-6 ">
-<div class="horizontal"><img src="images/hackers-poulette-logo.png" alt="Logo du site : Hackers Poulette"></div>
+<!-- Logo disparait en version SmartPhone -->
+<div class="d-none d-sm-block horizontal"><img class="img-fluid" src="images/hackers-poulette-logo.png" alt="Logo du site : Hackers Poulette"></div>
 
 <!-- DIV 3-->
 <div class="col-12 col-sm-12 col-md-12"><hr>

@@ -1,35 +1,14 @@
 
-
-@font-face {
-    font-family: 'bellota';
-	src: url(../fonts/Bellota-Bold.otf);
-	font-weight: bold;
-	font-style: normal;
-}
-
-a, a:visited
-
-{
-	color: #212529;
-}
-
-
-
-html, body
+@font-face 
 	{
-		background-color: white;
-		font-family: 'bellota', sans-serif;
-		background-position: center;
-		background-repeat: no-repeat;
+		font-family: 'bellota';
+		font-display: auto;
+		src: url(../fonts/Bellota-Bold.otf);
+		font-weight: bold;
+		font-style: normal;
 	}
 
-.entete
-	{
-	text-align: center
-	}
-
-
-.no-gutters 
+	.no-gutters 
 	{
 	  margin-right: 0;
 	  margin-left: 0;
@@ -43,32 +22,13 @@ html, body
 	}
 */
 
-
-
-main
+html, body
 	{
-		background-color: white;
-		margin-top: 0;
-		margin-left: 25px;
-		margin-right: 25px;
-		margin-bottom: 125px;
-		padding: 25px;
-		box-shadow: 4px 4px 4px 0px rgba(146, 104, 104, 0.2);
-		border: 1px solid #212529;
-	}
-
-input, select, textarea, button 
-	{
-		border-radius: 4px;
-		padding: 4px;
-		margin-left: 5px;
-		background-color: rgb(229, 238, 250);
-	}
-
-textarea
-	{
-		background-color: white;
-		width: 100%;
+		/* background-color: white; */
+		font-family: 'bellota', sans-serif;
+		background-image: url("../../images/motif.jpg");
+		background-position: center;
+		/* background-repeat: no-repeat; */
 	}
 
 header
@@ -85,21 +45,59 @@ header
 		margin-bottom: 0;
 	}
 
+main
+	{
+		background-color: white;
+		margin-top: 0;
+		margin-left: 25px;
+		margin-right: 25px;
+		margin-bottom: 125px;
+		padding: 25px;
+		box-shadow: 4px 4px 4px 0px rgba(146, 104, 104, 0.2);
+		/* border: 1px solid #212529; */
+	}
+
+
+.entete
+	{
+		text-align: center
+	}
+
+
+a, a:visited
+	{
+		color: #212529;
+	}
+
+
+
+input, select, textarea, button 
+	{
+		border-radius: 4px;
+		padding: 4px;
+		margin-left: 5px;
+		background-color: rgb(229, 238, 250);
+	}
+
+textarea
+	{
+		background-color: white;
+		width: 100%;
+	}
+
+
 div.horizontal 
 		{
 			display: flex;
 			justify-content: center;
+			text-align: center;
 		}
-
 
 h1
 	{
 		font-family: 'bellota', sans-serif;
-		/* color: white; */
-		/* color: #15c5bd; */
 		color: #303030;
 		font-size: 3em;
-		/* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75); */
 	}
 
 h2
@@ -119,18 +117,6 @@ p
 		box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
 	}
 
-
-/* FOOTER */
-
-footer
-	{
-		background-color: #15c5bd;
-		color: #303030;
-		height: 50px;
-		line-height: 50px;
-		margin-top: 250px;
-	}
-
 button
 {
 	background-color: rgb(229, 238, 250);
@@ -138,22 +124,7 @@ button
 	color: #212529;
 	border-radius: 5px;
 	width: 100%;
-
 }
-	.colorbtn
-	{
-
-		background-color: #7c586f;
-		border-radius: 6px;
-  		border: 1px solid #282b4c;
-  		padding-right: 18px;
-  		padding-bottom: 2px;
-  		padding-left: 18px;
-  		padding-top: 2px;
-  		color: white;
-  		font-weight: bold;
-
-	}
 
 
 label
@@ -164,13 +135,12 @@ label
 		font-family: 'bellota', sans-serif;
 	}
 
-.green{
-		font-size: 12px;
-		color: rgb(10, 206, 10);}
 
-.red{
-		font-size: 12px;
-		color: rgb(252, 11, 11);}
+.red
+		{
+			font-size: 12px;
+			color: rgb(252, 11, 11);
+		}
 
 .formulaire, .formulaireD, .formulaireL
 		{
@@ -198,8 +168,18 @@ label
 			margin-bottom: 0;
 		}
 
+
 .formulaireL
-{
-	background-color: rgb(204, 202, 202);
-	margin-bottom: 50;
-}
+	{
+		background-color: rgb(204, 202, 202);
+		margin-bottom: 50;
+	}
+
+footer
+	{
+		background-color: #15c5bd;
+		color: #303030;
+		height: 50px;
+		line-height: 50px;
+		margin-top: 250px;
+	}
