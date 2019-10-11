@@ -28,11 +28,6 @@ if (isset($_POST['envoye']) && !empty($_POST['envoye']))
         // Si formulaire rempli je démarre une session
         session_start ();
 
-        // Afficher les posts dans un array
-
-
-
-
         //prenom
         if (empty($_POST['prenom']))
         {
@@ -139,17 +134,6 @@ if (isset($_POST['envoye']) && !empty($_POST['envoye']))
 // Quand toutes les donnéés sont envoyées et TRUE
 if ($valeurNom==true && $valeurPrenom==true && $valeurEmail==true && $valeurMessage==true && $flagEmail==true) 
     {
-
-        ini_set( 'display_errors', 1 );
-        error_reporting( E_ALL );
-        $from = $valeurEmail;
-        $to = "emmanuel@trepant.be";
-        $subject = "Votre email a été envoyé !";
-        $message = "Données du mail !";
-        $headers = "From:" . $from;
-        mail($to,$subject,$message, $headers);
-        //echo "L'email a été envoyé.";
-
 
 //echo "TRUE - TOUS LES CHAMPS<br>";
 //print_r($_SESSION);
