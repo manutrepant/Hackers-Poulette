@@ -14,6 +14,7 @@ https://github.com/manutrepant/Hackers-Poulette/blob/master/mockUp-tablet-deskto
 * Affichage d'erreur à proximité des inputs
 * Messages des erreurs compréhensibles
 * Input email validé
+* Envoi email OK
 
 ### En cours
 * Valider et 'sanitiser' les inputs
