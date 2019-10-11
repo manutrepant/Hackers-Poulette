@@ -1,0 +1,205 @@
+
+
+@font-face {
+    font-family: 'bellota';
+	src: url(../fonts/Bellota-Bold.otf);
+	font-weight: bold;
+	font-style: normal;
+}
+
+a, a:visited
+
+{
+	color: #212529;
+}
+
+
+
+html, body
+	{
+		background-color: white;
+		font-family: 'bellota', sans-serif;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+.entete
+	{
+	text-align: center
+	}
+
+
+.no-gutters 
+	{
+	  margin-right: 0;
+	  margin-left: 0;
+	}
+
+/* Visualiser ma construction */
+/*div
+	{
+		border:1px black solid;
+		background-color: aqua;
+	}
+*/
+
+
+
+main
+	{
+		background-color: white;
+		margin-top: 0;
+		margin-left: 25px;
+		margin-right: 25px;
+		margin-bottom: 125px;
+		padding: 25px;
+		box-shadow: 4px 4px 4px 0px rgba(146, 104, 104, 0.2);
+		border: 1px solid #212529;
+	}
+
+input, select, textarea, button 
+	{
+		border-radius: 4px;
+		padding: 4px;
+		margin-left: 5px;
+		background-color: rgb(229, 238, 250);
+	}
+
+textarea
+	{
+		background-color: white;
+		width: 100%;
+	}
+
+header
+	{
+		background-color: #15c5bd;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		margin-top: 25px;
+		margin-left: 25px;
+		margin-right: 25px;
+		margin-bottom: 0;
+	}
+
+div.horizontal 
+		{
+			display: flex;
+			justify-content: center;
+		}
+
+
+h1
+	{
+		font-family: 'bellota', sans-serif;
+		/* color: white; */
+		/* color: #15c5bd; */
+		color: #303030;
+		font-size: 3em;
+		/* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75); */
+	}
+
+h2
+	{
+		font-size: 1.5em;
+	}
+
+
+p
+	{
+		font-family: 'bellota', sans-serif;
+	}
+
+
+.ombre
+	{
+		box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.50);
+	}
+
+
+/* FOOTER */
+
+footer
+	{
+		background-color: #15c5bd;
+		color: #303030;
+		height: 50px;
+		line-height: 50px;
+		margin-top: 250px;
+	}
+
+button
+{
+	background-color: rgb(229, 238, 250);
+	width: 100%;
+	color: #212529;
+	border-radius: 5px;
+	width: 100%;
+
+}
+	.colorbtn
+	{
+
+		background-color: #7c586f;
+		border-radius: 6px;
+  		border: 1px solid #282b4c;
+  		padding-right: 18px;
+  		padding-bottom: 2px;
+  		padding-left: 18px;
+  		padding-top: 2px;
+  		color: white;
+  		font-weight: bold;
+
+	}
+
+
+label
+	{
+		color: #212529;
+		font-weight: bold;
+		font-size: 24px;
+		font-family: 'bellota', sans-serif;
+	}
+
+.green{
+		font-size: 12px;
+		color: rgb(10, 206, 10);}
+
+.red{
+		font-size: 12px;
+		color: rgb(252, 11, 11);}
+
+.formulaire, .formulaireD, .formulaireL
+		{
+			font-size: 24px;
+			font-family: 'bellota', sans-serif;
+			background-color: white;
+
+			text-align: left;
+	
+			margin-top: 0px;
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-bottom: 0;
+		}
+
+.formulaireD
+		{
+			font-size: 24px;
+			font-family: 'bellota', sans-serif;
+			background-color: rgb(238, 233, 233);
+			text-align: left;	
+			margin-top: 0px;
+			margin-left: 25px;
+			margin-right: 25px;
+			margin-bottom: 0;
+		}
+
+.formulaireL
+{
+	background-color: rgb(204, 202, 202);
+	margin-bottom: 50;
+}
