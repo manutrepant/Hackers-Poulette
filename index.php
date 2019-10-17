@@ -143,9 +143,10 @@ if ($valeurNom==true && $valeurPrenom==true && $valeurEmail==true && $valeurMess
         ini_set( 'display_errors', 1 );
         error_reporting( E_ALL );
         $from = $valeurEmail;
-        $to = "emmanuel@trepant.be";
-        $subject = "Votre email a été envoyé !";
-        $message = "Données du mail !";
+        $to = "monemail@yahoo.fr";
+        $subject = "Bonne réception du message!";
+        //$message = "Données du mail !";
+        $message = $valeurMessage;
         $headers = "From:" . $from;
         mail($to,$subject,$message, $headers);
         //echo "L'email a été envoyé.";
@@ -245,17 +246,17 @@ href="favicon.ico"
 <div class="col-12 col-sm-6 col-md-6">
 <div class="row-12"><hr>
 <label for="Entrer votre prénom" class="w-100 p-2">Entrer votre prénom : <?php echo "<p class='".$checkColor."'>".$checkPrenom."</p>" ?> </label>
-<input title="Entrer votre prénom" type="text" name="prenom" placeholder="Entrer votre prénom" size="30" maxlength="30" autofocus <?php echo 'value="'.$valeurPrenom.'"'; ?> >
+<input title="Entrer votre prénom" type="text" name="prenom" placeholder="Entrer votre prénom" size="22" maxlength="30" autofocus <?php echo 'value="'.$valeurPrenom.'"'; ?> >
 </div>
 
 <div class="row-12"><hr>
 <label for="Entrer votre nom de famille" class="w-100 p-2">Entrer votre nom de famille : <?php echo "<p class='".$checkColor."'>".$checkNom."</p>" ?></label>
-<input title="Entrer votre nom de famille" type="text" name="nom" placeholder="Entrer votre nom de famille" size="30" maxlength="30" <?php echo 'value="'.$valeurNom.'"'; ?>>
+<input title="Entrer votre nom de famille" type="text" name="nom" placeholder="Entrer votre nom de famille" size="22" maxlength="30" <?php echo 'value="'.$valeurNom.'"'; ?>>
 </div>
 
 <div class="row-12"><hr>
 <label for="Entrer votre adresse email" class="w-100 p-2">Entrer votre adresse email : <?php echo "<p class='".$checkColor."'>".$checkEmail."</p>" ?></label>
-<input title="Entrer votre adresse email" type="text" name="email" placeholder="Entrer votre adresse email" autocomplete="on" size="30" maxlength="30" <?php echo 'value="'.$valeurEmail.'"'; ?>>
+<input title="Entrer votre adresse email" type="text" name="email" placeholder="Entrer votre adresse email" autocomplete="on" size="22" maxlength="30" <?php echo 'value="'.$valeurEmail.'"'; ?>>
 
 <!-- Info email non valide -->
 <?php
