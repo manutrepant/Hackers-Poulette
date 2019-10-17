@@ -63,6 +63,7 @@ href="favicon.ico"
 <h1>Votre email est envoyé !</h1>
 </header>
 
+<main><div class="col">
 <div class="col-12 formulaire ">
 <?php echo '<strong>Votre prénom : </strong>'.$_SESSION['prenom']; ?></div>
 
@@ -103,6 +104,8 @@ for ($i=0; $i < $checked_count ; $i++)
 <?php echo '<strong>Votre message : </strong>'.$_SESSION['message']; ?></div>
 </div>
 
+</div>
+</main>
 
 <?php 
 // Affichage Session
